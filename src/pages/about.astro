@@ -1,5 +1,10 @@
 ---
-const pageTitle = "Sobre mi";
+import "../styles/global.css";
+
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+const { pageTitle } = Astro.props;
 
 const identity = {
     firstName: "Eugenijus",
@@ -19,6 +24,10 @@ const skills = [
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -28,14 +37,23 @@ const goal = 3;
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
+
+        <style define:vars={{ skillColor, fontWeight, textCase }}>
+            h1 {
+                color: purple;
+                font-size: 4rem;
+            }
+            .skill {
+                color: var(--skillColor);
+                font-weight: var(--fontWeight);
+                text-transform: var(--textCase);
+            }
+        </style>
     </head>
     <body>
-        <a href="/">Inicio</a>
-        <a href="/about/">Sobre mi</a>
-        <a href="/blog/">Mi Blog</a>
+        <Header />
 
         <title>{pageTitle}</title>
-        <h2>... ¡y mi nuevo sitio Astro!</h2>
         <h1>Mi sitio Astro</h1>
         <h1>Sobre mi</h1>
         <h2>... ¡y mi nuevo sitio Astro!</h2>
@@ -68,7 +86,7 @@ const goal = 3;
         </ul>
         <p>Mis habilidades son:</p>
         <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
 
         {happy && <p>¡Estoy feliz de aprender Astro!</p>}
@@ -82,5 +100,9 @@ const goal = 3;
                 <p>Mi objetivo no son 3 días.</p>
             )
         }
+        <Footer />
+        <script>
+            import "../scripts/menu.js";
+        </script>
     </body>
 </html>

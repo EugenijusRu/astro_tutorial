@@ -1,11 +1,12 @@
 ---
-title: Mi segunda publicación en el blog
-author: Alumno de Astro
-description: "Después de aprender un poco de Astro, ¡no podía parar!"
-image:
-    url: "https://docs.astro.build/assets/arc.webp"
-    alt: "Miniatura de los arcos de Astro."
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'Mi primera publicación en el blog'
 pubDate: 2024-07-03
-tags: ["astro", "bloguear", "aprender en público", "éxitos"]
+description: 'Este es la primera publicación de mi nuevo blog de Astro.'
+author: 'Alumno de Astro'
+image:
+    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    alt: 'El logotipo completo de Astro.'
+tags: ["astro", "bloguear", "aprender en público"]
 ---
 Después de una exitosa primera semana aprendiendo Astro, decidí probar un poco más. Escribí e importé un pequeño componente de memoria.
